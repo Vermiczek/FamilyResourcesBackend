@@ -1,0 +1,133 @@
+
+###
+
+#register admin
+POST http://localhost:3000/user/registerAdmin HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Bartek",
+    "roles": ["user"],
+    "email": "bobo@gmail.com",
+    "surname": "Nonlifter",
+    "password": "lol"
+}
+
+###
+
+#register regular user
+POST http://localhost:3000/user/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Rafal",
+    "roles": ["user"],
+    "email": "lol@omg.pl",
+    "surname": "Smieszek",
+    "password": "lel"
+}
+
+###
+
+#login admin
+POST http://localhost:3000/user/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "bobo@gmail.com",
+    "password":"lol"
+}
+
+
+###
+
+#login regular user
+POST http://localhost:3000/user/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "lol@omg.pl",
+    "password":"lel"
+}
+
+###
+
+#create family regular user
+POST http://localhost:3000/family/create HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxvbEBvbWcucGwiLCJpYXQiOjE2NTc4MzI3MTYsImV4cCI6MTY1NzkzMjcxNX0.P0b_ATVg1ipFcjShCLvWsIn93wlUZwC2r6ZIaQl8bZ8
+Content-Type: application/json
+
+{
+}
+
+
+
+###
+
+#leave family as regular user
+POST http://localhost:3000/family/leave HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJvYm9AZ21haWwuY29tIiwiaWF0IjoxNjU3ODMyNzQwLCJleHAiOjE2NTc5MzI3Mzl9.7xDRC-RXr7suXtFoDyqUo5v6BchEskE8fVHV1WuenB0
+Content-Type: application/json
+
+{
+}
+
+###
+
+
+###
+
+POST http://localhost:3000/family/join HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJvYm9AZ21haWwuY29tIiwiaWF0IjoxNjU3ODMyNzQwLCJleHAiOjE2NTc5MzI3Mzl9.7xDRC-RXr7suXtFoDyqUo5v6BchEskE8fVHV1WuenB0
+Content-Type: application/json
+
+{
+    "id": "XMQppev7vJydu81OGbVdMYy16",
+    "surname": "Michalczewski",
+    "name": "Rafal",
+    "email": "bobo@gmail.com",
+    "password":"kKDLN0tYqjAwmMjHewLtQ9teT"
+    
+}
+
+###
+
+POST http://localhost:3000/family/addExpenses HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxvbEBvbWcucGwiLCJpYXQiOjE2NTc4MzI3MTYsImV4cCI6MTY1NzkzMjcxNX0.P0b_ATVg1ipFcjShCLvWsIn93wlUZwC2r6ZIaQl8bZ8
+Content-Type: application/json
+
+{
+    "expenses":50}
+
+###
+
+#add funds by admin
+POST http://localhost:3000/family/addFunds HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxvbEBvbWcucGwiLCJpYXQiOjE2NTc4MzI3MTYsImV4cCI6MTY1NzkzMjcxNX0.P0b_ATVg1ipFcjShCLvWsIn93wlUZwC2r6ZIaQl8bZ8
+Content-Type: application/json
+
+{
+    "id": "yKqlBoT73IXL4fkXwbkRXS2wh",
+    "funds":250
+    }
+
+###
+#add funds by admin
+POST http://localhost:3000/family/addFunds HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxvbEBvbWcucGwiLCJpYXQiOjE2NTc4MzI3MTYsImV4cCI6MTY1NzkzMjcxNX0.P0b_ATVg1ipFcjShCLvWsIn93wlUZwC2r6ZIaQl8bZ8
+Content-Type: application/json
+
+{
+    "id": "9Gy1qfflB0UhXBtbC2OpsZgLY",
+    "expenses":250
+    }    
+###
+
+    POST http://localhost:3000/family/data HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxvbEBvbWcucGwiLCJpYXQiOjE2NTgxMDA5OTB9.D_ZxWGcCtTHVpTyhe9g4zYFAvE5uT7NwPuNpfuOVPx4
+Content-Type: application/json
+
+{
+    "id": "yKqlBoT73IXL4fkXwbkRXS2wh",
+    "funds":250
+    }
